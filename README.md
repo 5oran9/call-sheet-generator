@@ -1,51 +1,111 @@
 # Call Sheet Generator
 
-시나리오(대본)에서 촬영 준비에 필요한 정보를 구조화해 씬 리스트(Scene List)를 만들고, 추후 콜시트(Call Sheet)까지 확장하는 것을 목표로 하는 프로젝트입니다.
+시나리오(대본) 텍스트를 기반으로 촬영 준비에 필요한 정보를 구조화하여 **Scene List를 생성**하고, 향후 **Call Sheet까지 확장**하는 것을 목표로 하는 프로젝트입니다.
 
-현재 버전은 **씬 리스트 자동 생성**까지 구현되어 있습니다.
-
----
-
-## 1) 프로젝트 목표
-
-### 지금(현재)
-- 시나리오 텍스트를 기반으로 씬 단위 정보를 정리
-- 씬 리스트를 화면에서 확인
-- 씬 리스트를 엑셀(.xlsx)로 내보내기
-
-### 다음(로드맵)
-- 씬 리스트 → 일정/리소스 로직을 붙여 **콜시트 생성**
-- 제작 제약(주 52시간, 이동/식사시간, 인원 분배 등)을 반영한 스케줄 최적화
-- 날씨/로케이션/이동시간 등 외부 데이터 연동
+현재 버전에서는 **Scene List 생성 및 엑셀 출력**까지 구현되어 있습니다.
 
 ---
 
-## 2) 주요 기능
+## 1) Project Goal
 
-### Scene List (현재 구현)
-- 씬 단위로 정보 구조화
-  - 예: 씬 번호, 장소, 시간대(낮/밤/새벽/해질무렵 등), 등장인물, 요약 등
-- 엑셀 출력
-  - 열 너비 자동 조정
-  - 헤더(2행) 가운데 정렬
-  - 표 테두리 포함 등 가독성 포맷 적용
+### Current
+- 시나리오 텍스트 기반 Scene List 생성
+- Scene 단위 정보 구조화
+- Scene List 엑셀(.xlsx) 출력
 
----
-
-## 3) 기술 스택 (예시)
-
-- Frontend: Next.js, TypeScript, Tailwind CSS
-- Backend: Python(Colab)
-- Excel Export: `xlsx-js-style`
-
+### Future
+- Scene List → 촬영 일정 자동 배치
+- 제약 조건을 반영한 Call Sheet 생성
 
 ---
 
-## 4) 실행 방법
+## 2) Features
+
+### Scene List (Implemented)
+- 씬 번호
+- 장소
+- 시간대 (낮 / 밤 / 새벽 / 해질무렵 등)
+- 등장 인물
+- 씬 요약
+
+### Excel Export
+- Scene List 엑셀 출력
+- 열 너비 자동 조정
+- 헤더 정렬 및 테두리 적용
+
+---
+
+## 3) Tech Stack
+- Frontend: Next.js
+- Excel Export: xlsx-js-style
+
+---
+
+## 4) Installation & Run
 
 ```bash
-# install
-npm install
+pnpm install
+pnpm dev
+```
 
-# dev
-npm run dev
+```text
+http://localhost:3000
+```
+
+---
+
+## 5) Usage Flow
+1. 시나리오 텍스트 입력
+2. Scene List 생성
+3. 결과 확인
+4. 엑셀 파일 다운로드
+
+---
+
+## 6) Environment Variables
+
+### Frontend (.env.local)
+
+```env
+NEXT_PUBLIC_API_BASE=http://localhost:8000
+```
+
+- Scene 분석 및 확장 기능을 담당하는 백엔드 API 주소
+- 로컬 FastAPI 서버 또는 Colab Ngrok URL 사용
+
+---
+
+## 7) Colab / Backend (Experimental)
+
+콜시트 생성 단계에서는 Python 기반 분석 서버를 사용합니다.
+
+### Stack
+- Google Colab
+- FastAPI
+- Ngrok
+
+### Responsibility
+- 시나리오 텍스트 파싱
+- Scene 단위 구조화 데이터 생성
+- Scene List → 촬영 일정 → Call Sheet 변환 로직 (예정)
+
+### Code Management
+- Colab 노트북은 실험 및 프로토타입 용도로 사용
+- 메인 레포에서는 API 인터페이스 중심으로 관리
+- 추후 backend 레포 분리 예정
+
+---
+
+## 8) Roadmap (Call Sheet)
+- Scene → 촬영 일정 자동 배치
+- 주 52시간 근무 기준 시간 제약 반영
+- 점심 / 저녁 시간 고려
+- 로케이션 간 이동 시간 반영
+- 등장 인원 분배 및 중복 최소화
+- 날씨 / 지도 API 연동
+- 최종 Call Sheet 엑셀 출력
+
+---
+
+## 9) License
+TBD
