@@ -1,6 +1,7 @@
 # Call Sheet Generator
 
-시나리오(대본) 텍스트를 기반으로 촬영 준비에 필요한 정보를 구조화하여 **Scene List를 생성**하고, 향후 **Call Sheet까지 확장**하는 것을 목표로 하는 프로젝트입니다.
+시나리오(대본) 텍스트를 기반으로 촬영 준비에 필요한 정보를 구조화하여 **Scene List를 생성**하고,
+향후 **Call Sheet까지 확장**하는 것을 목표로 하는 프로젝트입니다.
 
 현재 버전에서는 **Scene List 생성 및 엑셀 출력**까지 구현되어 있습니다.
 
@@ -90,7 +91,7 @@ NEXT_PUBLIC_API_BASE=http://localhost:8000
 - Scene List → 촬영 일정 → Call Sheet 변환 로직 (예정)
 
 ### Code Management
-https://colab.research.google.com/drive/1gNO6JiMahHIMBXYs3T0Dt0nreWTu7Ewx?usp=sharing
+🔗 Notebook Link : https://colab.research.google.com/drive/1gNO6JiMahHIMBXYs3T0Dt0nreWTu7Ewx?usp=sharing
 - Colab 노트북은 실험 및 프로토타입 용도로 사용
 - 메인 레포에서는 API 인터페이스 중심으로 관리
 - 추후 backend 레포 분리 예정
