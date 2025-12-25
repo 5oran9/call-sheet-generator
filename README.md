@@ -34,10 +34,10 @@
 
 ## 3) 기술 스택 (예시)
 
-- Frontend: Next.js (App Router)
+- Frontend: Next.js, TypeScript, Tailwind CSS
+- Backend: Python(Colab)
 - Excel Export: `xlsx-js-style`
 
-프로젝트 상황에 맞게 아래처럼 실제로 쓰는 것만 남기면 됩니다.
 
 ---
 
@@ -45,7 +45,7 @@
 
 ```bash
 # install
-pnpm install
+npm install
 
 # dev
-pnpm dev
+npm run dev
