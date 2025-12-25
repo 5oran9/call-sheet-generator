@@ -90,6 +90,7 @@ NEXT_PUBLIC_API_BASE=http://localhost:8000
 - Scene List → 촬영 일정 → Call Sheet 변환 로직 (예정)
 
 ### Code Management
+https://colab.research.google.com/drive/1gNO6JiMahHIMBXYs3T0Dt0nreWTu7Ewx?usp=sharing
 - Colab 노트북은 실험 및 프로토타입 용도로 사용
 - 메인 레포에서는 API 인터페이스 중심으로 관리
 - 추후 backend 레포 분리 예정
